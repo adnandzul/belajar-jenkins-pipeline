@@ -8,8 +8,11 @@ pipeline {
         stage("build"){
             steps{
                 script {
-                    for (int i =0; i < 10; i++) {
-                        echo("script ${i}")
+                    def data = [
+                        "firstname" : "adnan",
+                        "LastName": "dzulfiqar"
+                    ]
+                    writeJSON(file: "data.json", json: data)
                     }
                 }
                 echo("start build!")
