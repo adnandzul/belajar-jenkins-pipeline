@@ -1,48 +1,62 @@
 pipeline {
-    agent { label "linux && java11" }
-
+    agent none
     stages {
-        stage("build") {
+        stage('build') {
+            agent {
+                node {
+                    label 'linux && java11'
+                }
+            }
             steps {
-                echo "start build!"
-                sh "./mvnw clean compile test-compile"
-                echo "end build!"
+                echo 'start build!'
+                sh './mvnw clean compile test-compile'
+                echo 'end build!'
             }
         }
 
-        stage("test") {
+        stage('test') {
+            agent {
+                node {
+                    label 'linux && java11'
+                }
+            }
             steps {
                 script {
                     def data = [
-                        "firstname": "adnan",
-                        "LastName": "dzulfiqar"
+                        'firstname': 'adnan',
+                        'LastName': 'dzulfiqar'
                     ]
-                    writeJSON(file: "data.json", json: data)
+                    writeJSON(file: 'data.json', json: data)
                 }
-                echo "hello test"
-                sh "./mvnw test"
-                echo "hello test"
+                echo 'hello test'
+                sh './mvnw test'
+                echo 'hello test'
             }
         }
 
-        stage("Deploy") {
+        stage('Deploy') {
+            agent {
+                node {
+                    label 'linux && java11'
+                }
+            }
             steps {
-                echo "hello Deploy"
-                echo "hello test"
-                echo "hello test"
+                echo 'hello Deploy'
+                echo 'hello Deploy'
+                echo 'hello Deploy'
             }
         }
     }
 
     post {
         always {
-            echo "always mw"
+            echo 'always mw'
         }
         success {
-            echo "yay success"
+            echo 'yay success'
         }
         failure {
-            echo "oh, shit"
+            echo 'oh, shit'
         }
         cleanup {
             echo "Don't care success or error"
