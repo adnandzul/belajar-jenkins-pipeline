@@ -7,10 +7,9 @@ pipeline {
     stages {
         stage("build"){
             steps{
-                echo("hello build!")
-                echo("hello build!")
-                echo("hello build!")
-                sleep(10)
+                echo("start build!")
+                sh("./mvnw clean compile test-compile")
+                echo("end build!")
             }
         } 
         stage("test"){
