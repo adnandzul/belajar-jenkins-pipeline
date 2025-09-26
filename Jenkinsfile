@@ -7,6 +7,7 @@ pipeline {
     stages {
         stage("build"){
             steps{
+
                 script {
                     def data = [
                         "firstname" : "adnan",
@@ -35,7 +36,7 @@ pipeline {
             }
             
         }
-    }
+    
     post {
         always {
             echo "awlyas mw"
