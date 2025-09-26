@@ -10,6 +10,7 @@ pipeline {
                 echo("hello build!")
                 echo("hello build!")
                 echo("hello build!")
+                sleep(10)
             }
         } 
         stage("test"){
