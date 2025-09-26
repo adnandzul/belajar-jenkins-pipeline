@@ -9,16 +9,17 @@ pipeline {
             steps{
 
                 script {
-                    def data = [
-                        "firstname" : "adnan",
-                        "LastName": "dzulfiqar"
-                    ]
-                    writeJSON(file: "data.json", json: data)
+                        def data = [
+                            "firstname" : "adnan",
+                            "LastName": "dzulfiqar"
+                        ]
+                        writeJSON(file: "data.json", json: data)
                     }
-                }
+                
                 echo("start build!")
                 sh("./mvnw clean compile test-compile")
                 echo("end build!")
+                }
             }
         } 
         stage("test"){
