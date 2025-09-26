@@ -8,17 +8,22 @@ pipeline {
         stage("build"){
             steps{
                 echo("hello build!")
+                echo("hello build!")
+                echo("hello build!")
             }
         } 
         stage("test"){
             steps {
                 echo("hello test")
-                sh("error")
+                echo("hello test")
+                echo("hello test")
             }
         }
         stage("Deploy"){
             steps {
                 echo("hello Deploy")
+                echo("hello test")
+                echo("hello test")
             }
             
         }
