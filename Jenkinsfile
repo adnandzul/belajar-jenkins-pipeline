@@ -5,10 +5,21 @@ pipeline {
         }
     }
     stages {
-        stage("hello yuhu"){
+        stage("build"){
             steps{
-                echo("yuhuu this is step brow")
+                echo("hello build!")
             }
+        } 
+        stage("test"){
+            steps {
+                echo("hello test")
+            }
+        }
+        stage("Deploy"){
+            steps {
+                echo("hello Deploy")
+            }
+            
         }
     }
     post {
@@ -25,4 +36,5 @@ pipeline {
             echo " Don't care succes or error"
         }
     }
+
 }
