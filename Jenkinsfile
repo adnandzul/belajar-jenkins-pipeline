@@ -11,4 +11,18 @@ pipeline {
             }
         }
     }
+    post {
+        always {
+            echo "awlyas mw"
+        }
+        success {
+            echo" yay success"
+        }
+        failure {
+            echo "oh, shit"
+        }
+        cleanup {
+            echo " Don't care succes or error"
+        }
+    }
 }
