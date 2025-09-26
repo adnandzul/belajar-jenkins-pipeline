@@ -15,7 +15,7 @@ pipeline {
         stage("test"){
             steps {
                 echo("hello test")
-                echo("hello test")
+                sh("./mvnw test")
                 echo("hello test")
             }
         }
