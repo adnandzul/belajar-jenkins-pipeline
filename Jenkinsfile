@@ -2,9 +2,9 @@ pipeline {
     agent none
 
     environtment {
-        AUTHOR = "adnan dzulfiqar",
-        EMAIL = "adnan@gnail.com",
-        WEB = "https://adnan.com"
+        AUTHOR = 'adnan dzulfiqar'
+        EMAIL = 'adnan@gnail.com'
+        WEB = 'https://adnan.com'
     }
     stages {
         stage('prepare') {
