@@ -1,7 +1,7 @@
 pipeline {
     agent none
 
-    environtment {
+    environment {
         AUTHOR = 'adnan dzulfiqar'
         EMAIL = 'adnan@gnail.com'
         WEB = 'https://adnan.com'
